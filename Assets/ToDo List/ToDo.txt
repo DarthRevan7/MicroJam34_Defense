@@ -1,0 +1,2 @@
+1 - Inventarsi qualcosa per fare in modo che la UI segua la camera,
+    oppure per fargli mantenere la stessa posizione a schermo.
