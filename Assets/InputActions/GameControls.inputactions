@@ -1,0 +1,54 @@
+{
+    "name": "GameControls",
+    "maps": [
+        {
+            "name": "Mouse",
+            "id": "d30537fd-58e8-4cd5-8428-35076842df96",
+            "actions": [
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "9c36e719-7cb7-4c4f-bf24-4450a6119c61",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MousePosition",
+                    "type": "Value",
+                    "id": "1b1f1465-ce16-4959-a2a4-27a822ff6763",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "91e678f4-fa9c-4967-9321-6d187d616bb3",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "747a517e-e4fe-4c4d-be7c-15dd594e3a0f",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MousePosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
