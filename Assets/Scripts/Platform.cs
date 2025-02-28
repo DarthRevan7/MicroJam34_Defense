@@ -52,11 +52,18 @@ public class Platform : MonoBehaviour
         screenPosition = Camera.main.WorldToScreenPoint(centerPosition);
         screenPosition += offset;
         //Se la UI è fuori dai bounds
-        //Forse devo modificare in modo da capire se il rect transform è fuori dai bounds
-        //oppure uno dei bordi sta andando fuori dal bound.
-        if(screenPosition.x > Screen.width - screenBounds || screenPosition.x < screenBounds || screenPosition.y > Screen.height - screenBounds || screenPosition.y < screenBounds )
+        //Ricavo il bordino del rettangolo della UI
+        float x1 = screenPosition.x + buildTurretPanel.GetComponent<RectTransform>().rect.width/2;
+        float x2 = screenPosition.x - buildTurretPanel.GetComponent<RectTransform>().rect.width/2;
+
+        float y1 = screenPosition.y + buildTurretPanel.GetComponent<RectTransform>().rect.height/2;
+        float y2 = screenPosition.y - buildTurretPanel.GetComponent<RectTransform>().rect.height/2;
+        //Se il rettangolo della UI è fuori dai bounds dello schermo
+        bool checkX = x1 > Screen.width - screenBounds || x2 < screenBounds;
+        bool checkY = y1 > Screen.height - screenBounds || y2 < screenBounds;
+        if(checkX || checkY)
         {
-            buildTurretPanel.SetActive(false);
+            ResetUI();
             return;
         }
 
