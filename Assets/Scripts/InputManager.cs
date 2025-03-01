@@ -101,23 +101,25 @@ public class InputManager : MonoBehaviour
         if(isPointerOverGameObject)
             return;
 
+        //Raycast x capire cosa ha colpito l'utente col mouse
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(mousePosition.action.ReadValue<Vector2>());
 
-        Debug.Log("Click");
-
+        
+        //Se ho colpito qualcosa col raycast
         if(Physics.Raycast(ray, out hit))
         {
-            Debug.Log("Raycast");
+            
+            if(hitOnce)
+            {
+                lastHit.transform.GetComponent<Platform>().ResetUI();
+            }
             if(hit.collider.tag == "Platform")
             {
+                
                 hit.transform.GetComponent<Platform>().SetUI();
                 lastHit = hit;
                 hitOnce = true;
-            }
-            else if(hitOnce)
-            {
-                lastHit.transform.GetComponent<Platform>().ResetUI();
             }
         }
         
